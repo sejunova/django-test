@@ -7,6 +7,10 @@
 <body>
 {% for post in posts %}
 <a href="{% url 'post_detail' post_pk=post.pk %}"><h2>{{ post.title }}</h2></a>
+<form action="{% url 'post_delete' post_pk=post.pk %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="포스트 삭제하기">
+</form>
 <br>
 {% endfor %}
 </body>

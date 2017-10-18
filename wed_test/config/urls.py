@@ -18,12 +18,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from config import settings
-from post.views import post_list, post_detail, post_create
+from post.views import post_list, post_detail, post_create, post_delete
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^post/$', post_list, name='post_list'),
     url(r'^post/(?P<post_pk>\d+)/$', post_detail, name='post_detail'),
     url(r'^post/create/$', post_create, name='post_create'),
+    url(r'^post/delete/(?P<post_pk>\d+)/$', post_delete, name='post_delete'),
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

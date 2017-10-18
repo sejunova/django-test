@@ -9,5 +9,9 @@
 <img src="{{ post.photo.url }}" alt="">
 <p>{{ post.content }}</p>
 <span>{{ post.created_at }}</span>
+<form action="{% url 'post_delete' post_pk=post.pk %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="포스트 삭제하기">
+</form>
 </body>
 </html>
