@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST생성</title>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ post_form }}
+    <input type="submit" value="포스트 올리기">
+</form>
+</body>
+</html>
